@@ -333,7 +333,7 @@ jobs:
       packages: write
       contents: read
     needs: [check, test, build, smoke]
-    if: ${{ github.ref == 'refs/heads/main' && !cancelled() && needs.check.result == 'success' && needs.test.result == 'success' && needs.smoke.result == 'success' }}
+    if: ${{ (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/release/')) && !cancelled() && needs.check.result == 'success' && needs.test.result == 'success' && needs.smoke.result == 'success' }}
     strategy:
       fail-fast: false
       matrix:
