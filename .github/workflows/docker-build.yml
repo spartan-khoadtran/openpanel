@@ -47,7 +47,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  repo_owner: "openpanel-dev"
+  repo_owner: ${{ github.repository_owner }}
 
 # Shape of a run: `check`, `test` and `build` start together; `smoke` boots
 # what `build` produced. On a branch that is the whole run. On main, `merge`
