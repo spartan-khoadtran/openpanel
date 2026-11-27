@@ -72,7 +72,7 @@ function Component() {
         <p className="text-muted-foreground text-sm">
           Send RevenueCat subscription events straight to this project:
           renewals, expirations and billing issues that happen while the app is
-          closed, plus the revenue of every paid purchase. No backend needed.
+          closed, plus the revenue of every paid purchase.
         </p>
       </div>
 
