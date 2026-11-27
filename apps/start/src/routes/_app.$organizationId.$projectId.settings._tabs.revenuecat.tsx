@@ -1,13 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExternalLinkIcon, PlusIcon } from 'lucide-react';
+import { PlusIcon } from 'lucide-react';
 import { useId, useState } from 'react';
 import CopyInput from '@/components/forms/copy-input';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAppContext } from '@/hooks/use-app-context';
 import { pushModal } from '@/modals';
-import { cn } from '@/utils/cn';
 
 export const Route = createFileRoute(
   '/_app/$organizationId/$projectId/settings/_tabs/revenuecat'
@@ -15,7 +14,6 @@ export const Route = createFileRoute(
   component: Component,
 });
 
-const DOCS_URL = 'https://openpanel.dev/docs/revenuecat';
 const AUTHORIZATION_PLACEHOLDER = 'Bearer base64(clientId:clientSecret)';
 
 const EVENTS: { revenuecat: string; openpanel: string }[] = [
@@ -187,16 +185,6 @@ function Component() {
           <li>RevenueCat retries are recorded once.</li>
         </ul>
       </div>
-
-      <a
-        className={cn(buttonVariants({ variant: 'outline' }), 'self-start')}
-        href={DOCS_URL}
-        rel="noreferrer"
-        target="_blank"
-      >
-        <ExternalLinkIcon className="h-4 w-4" />
-        Read the RevenueCat docs
-      </a>
     </div>
   );
 }
